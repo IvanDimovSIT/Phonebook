@@ -48,6 +48,46 @@ BOOL CPersonDisplay::GetPhoneTypeByID(const long lID, PHONE_TYPES& recPhoneType)
 	return FALSE;
 }
 
+BOOL CPersonDisplay::GetCompanyByID(const long lID, COMPANIES& recCompany) const
+{
+	for (INT_PTR i = 0; i < m_oCompanies.GetCount(); i++)
+	{
+		if (m_oCompanies.GetAt(i)->lID != lID)
+			continue;
+
+		recCompany = *(m_oCompanies.GetAt(i));
+		return TRUE;
+	}
+
+	return FALSE;
+
+}
+
+BOOL CPersonDisplay::GetPositionByID(const long lID, POSITIONS& recPositon) const
+{
+	for (INT_PTR i = 0; i < m_oPositions.GetCount(); i++)
+	{
+		if (m_oPositions.GetAt(i)->lID != lID)
+			continue;
+
+		recPositon = *(m_oPositions.GetAt(i));
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+CPtrAutoArray<COMPANIES>* CPersonDisplay::GetCompanies()
+{
+	return &m_oCompanies;
+}
+
+CPtrAutoArray<POSITIONS>* CPersonDisplay::GetPositions()
+{
+	return &m_oPositions;
+}
+
+
 CPtrAutoArray<CITIES>* CPersonDisplay::GetCities()
 {
 	return &m_oCities;

@@ -16,6 +16,10 @@
 #include "PersonsDoc.h"
 #include "PersonsView.h"
 #include "PersonsTable.h"
+#include "CompaniesDoc.h"
+#include "CompaniesView.h"
+#include "PositionsDoc.h"
+#include "PositionsView.h"
 #include "DataSourceSingleton.h"
 #include "UserLogin.h"
 
@@ -130,6 +134,25 @@ BOOL CPhonebookApp::InitInstance()
 	if (!pDocTemplate)
 		return FALSE;
 	AddDocTemplate(pDocTemplate);
+
+	// Register Companies document and view
+	pDocTemplate = new CMultiDocTemplate(IDS_COMPANIES_STRING,
+		RUNTIME_CLASS(CCompaniesDoc),
+		RUNTIME_CLASS(CChildFrame), // custom MDI child frame
+		RUNTIME_CLASS(CCompaniesView));
+	if (!pDocTemplate)
+		return FALSE;
+	AddDocTemplate(pDocTemplate);
+
+	// Register Positions document and view
+	pDocTemplate = new CMultiDocTemplate(IDS_POSITIONS_STRING,
+		RUNTIME_CLASS(CPositionsDoc),
+		RUNTIME_CLASS(CChildFrame), // custom MDI child frame
+		RUNTIME_CLASS(CPositionsView));
+	if (!pDocTemplate)
+		return FALSE;
+	AddDocTemplate(pDocTemplate);
+
 
 	// свързване с базата данни
 	CDataSourceSingleton* pDataSourceSingleton = CDataSourceSingleton::GetInstance();

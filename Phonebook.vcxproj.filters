@@ -183,11 +183,50 @@
     <ClInclude Include="PhonebookListView.h">
       <Filter>Views</Filter>
     </ClInclude>
+    <ClInclude Include="CompaniesTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="CompaniesAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="CompaniesData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="CompaniesDoc.h">
+      <Filter>Docs</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsDoc.h">
+      <Filter>Docs</Filter>
+    </ClInclude>
+    <ClInclude Include="CompaniesView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="CompaniesDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="CompaniesDialogType.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsDialogType.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionsView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Phonebook.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MainFrm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -267,6 +306,39 @@
       <Filter>Data</Filter>
     </ClCompile>
     <ClCompile Include="PhonebookListView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="CompaniesTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionsTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="Phonebook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompaniesData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionsData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="CompaniesDoc.cpp">
+      <Filter>Docs</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionsDoc.cpp">
+      <Filter>Docs</Filter>
+    </ClCompile>
+    <ClCompile Include="CompaniesView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="CompaniesDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionsDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionsView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
   </ItemGroup>

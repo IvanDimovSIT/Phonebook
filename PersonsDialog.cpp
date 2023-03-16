@@ -52,6 +52,9 @@ enum PhoneNumbersColumn
 #define VALIDATE_UCN_MESSAGE _T("Моля въведете правилно ЕГН (10 цифри).")
 #define VALIDATE_ADDRESS_MESSAGE _T("Моля въведете адрес")
 #define VALIDATE_CITY_MESSAGE _T("Моля въведете град")
+#define VALIDATE_COMPANY_MESSAGE _T("Моля въведете компания")
+#define VALIDATE_POSITION_MESSAGE _T("Моля въведете позиция")
+
 
 IMPLEMENT_DYNAMIC(CPersonsDialog, CDialogEx)
 
@@ -118,6 +121,19 @@ BOOL CPersonsDialog::ValidateUserInput() const
 		return FALSE;
 	}
 
+	if (!oInputValidator.ValidateComboBox(m_cmbCompany))
+	{
+		AfxMessageBox(VALIDATE_COMPANY_MESSAGE, MB_OK, MB_ICONERROR);
+		return FALSE;
+	}
+
+	if (!oInputValidator.ValidateComboBox(m_cmbPosition))
+	{
+		AfxMessageBox(VALIDATE_POSITION_MESSAGE, MB_OK, MB_ICONERROR);
+		return FALSE;
+	}
+
+
 	return TRUE;
 }
 
@@ -173,6 +189,42 @@ void CPersonsDialog::SetCitiesComboBox()
 	}
 	
 }
+
+void CPersonsDialog::SetCompaniesComboBox()
+{
+	CPtrAutoArray<COMPANIES>* oCompaniesArray = m_pPersonDisplay->GetCompanies();
+
+	for (INT_PTR i = 0; i < oCompaniesArray->GetCount(); i++)
+	{
+		COMPANIES* pCurrent = oCompaniesArray->GetAt(i);
+
+		int nIndex = m_cmbCompany.AddString(pCurrent->szCompanyName);
+		m_cmbCompany.SetItemData(nIndex, (DWORD_PTR)pCurrent->lID);
+
+		if (m_pPerson != NULL && pCurrent->lID == m_pPerson->m_recPerson.lCompanyID)
+			m_cmbCompany.SetCurSel(nIndex);
+	}
+
+}
+
+void CPersonsDialog::SetPositionsComboBox()
+{
+	CPtrAutoArray<POSITIONS>* oPositionsArray = m_pPersonDisplay->GetPositions();
+
+	for (INT_PTR i = 0; i < oPositionsArray->GetCount(); i++)
+	{
+		POSITIONS* pCurrent = oPositionsArray->GetAt(i);
+
+		int nIndex = m_cmbPosition.AddString(pCurrent->szPositionName);
+		m_cmbPosition.SetItemData(nIndex, (DWORD_PTR)pCurrent->lID);
+
+		if (m_pPerson != NULL && pCurrent->lID == m_pPerson->m_recPerson.lPositionID)
+			m_cmbPosition.SetCurSel(nIndex);
+	}
+
+
+}
+
 
 BOOL CPersonsDialog::SetDialogFields()
 {
@@ -316,6 +368,8 @@ void CPersonsDialog::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CMB_PERSONS_CITY, m_cmbCity);
 	DDX_Control(pDX, IDC_EDB_PERSONS_ADDRESS, m_edbAddress);
 	DDX_Control(pDX, IDC_LSC_PERSONS_PHONE_NUMBERS, m_lscPhoneNumbers);
+	DDX_Control(pDX, IDC_COMBO1, m_cmbCompany);
+	DDX_Control(pDX, IDC_COMBO2, m_cmbPosition);
 }
 
 
@@ -340,6 +394,8 @@ BOOL CPersonsDialog::OnInitDialog()
 
 	SetDialogName();
 	SetCitiesComboBox();
+	SetCompaniesComboBox();
+	SetPositionsComboBox();
 	SetColumns();
 	if (m_pPerson == NULL)
 		return TRUE;
@@ -377,6 +433,9 @@ void CPersonsDialog::OnOK()
 	m_edbUCN.GetWindowTextW(m_oNewPerson.m_recPerson.szUCN, PERSONS_UCN_LENGTH);
 	m_edbAddress.GetWindowTextW(m_oNewPerson.m_recPerson.szAddress, PERSONS_ADDRESS_LENGTH);
 	m_oNewPerson.m_recPerson.lCityID = m_cmbCity.GetItemData(m_cmbCity.GetCurSel());
+	m_oNewPerson.m_recPerson.lCompanyID = m_cmbCompany.GetItemData(m_cmbCompany.GetCurSel());
+	m_oNewPerson.m_recPerson.lPositionID = m_cmbPosition.GetItemData(m_cmbPosition.GetCurSel());
+
 
 	CDialogEx::OnOK();
 }

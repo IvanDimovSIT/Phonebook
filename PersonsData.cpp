@@ -4,6 +4,8 @@
 #include "PersonDisplay.h"
 #include "PhoneNumbersTable.h"
 #include "CitiesTable.h"
+#include "CompaniesTable.h"
+#include "PositionsTable.h"
 #include "PhoneTypesTable.h"
 #include "ErrorLogger.h"
 #include "DataSourceSingleton.h"
@@ -310,12 +312,16 @@ BOOL CPersonsData::SelectDislpayInformation(CPersonDisplay& oPersonDisplay)
 	CSession oSession;
 	CPhoneTypesTable oPhoneTypesTable(oSession);
 	CCitiesTable oCitiesTable(oSession);
+	CCompaniesTable oCompaniesTable(oSession);
+	CPositionsTable oPositionsTable(oSession);
 	oSession.Open(*CDataSourceSingleton::GetInstance()->GetDataSource());
 
 
 	BOOL bResult =
 		oPhoneTypesTable.SelectAll(*oPersonDisplay.GetPhoneTypes()) &&
-		oCitiesTable.SelectAll(*oPersonDisplay.GetCities());
+		oCitiesTable.SelectAll(*oPersonDisplay.GetCities()) &&
+		oCompaniesTable.SelectAll(*oPersonDisplay.GetCompanies()) &&
+		oPositionsTable.SelectAll(*oPersonDisplay.GetPositions());
 
 	oSession.Close();
 

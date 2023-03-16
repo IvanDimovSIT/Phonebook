@@ -73,6 +73,12 @@ private:
 	/// <summary> Задава CITIES в комбо-бокс </summary>
 	void SetCitiesComboBox();
 
+	/// <summary> Задава COMPANIES в комбо-бокс </summary>
+	void SetCompaniesComboBox();
+
+	/// <summary> Задава POSITIONS в комбо-бокс </summary>
+	void SetPositionsComboBox();
+
 
 public:
 	virtual BOOL OnInitDialog();
@@ -113,4 +119,6 @@ public:
 	CComboBox m_cmbCity;
 	CEdit m_edbAddress;
 	CListCtrl m_lscPhoneNumbers;
+	CComboBox m_cmbCompany;
+	CComboBox m_cmbPosition;
 };

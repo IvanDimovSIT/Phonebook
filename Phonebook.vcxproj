@@ -191,6 +191,13 @@
     <ClInclude Include="CitiesDoc.h" />
     <ClInclude Include="CitiesTable.h" />
     <ClInclude Include="CitiesView.h" />
+    <ClInclude Include="CompaniesAccessor.h" />
+    <ClInclude Include="CompaniesData.h" />
+    <ClInclude Include="CompaniesDialog.h" />
+    <ClInclude Include="CompaniesDialogType.h" />
+    <ClInclude Include="CompaniesDoc.h" />
+    <ClInclude Include="CompaniesTable.h" />
+    <ClInclude Include="CompaniesView.h" />
     <ClInclude Include="DocumentDataOperation.h" />
     <ClInclude Include="DataSourceSingleton.h" />
     <ClInclude Include="ErrorLogger.h" />
@@ -217,6 +224,13 @@
     <ClInclude Include="PhoneNumbersTable.h" />
     <ClInclude Include="PhoneTypesAccessor.h" />
     <ClInclude Include="PhoneTypesTable.h" />
+    <ClInclude Include="PositionsAccessor.h" />
+    <ClInclude Include="PositionsData.h" />
+    <ClInclude Include="PositionsDialog.h" />
+    <ClInclude Include="PositionsDialogType.h" />
+    <ClInclude Include="PositionsDoc.h" />
+    <ClInclude Include="PositionsTable.h" />
+    <ClInclude Include="PositionsView.h" />
     <ClInclude Include="PtrAutoArray.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SHA256.h" />
@@ -229,12 +243,17 @@
     <ClInclude Include="UsersTable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CompaniesDialog.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="CitiesData.cpp" />
     <ClCompile Include="CitiesDialog.cpp" />
     <ClCompile Include="CitiesDoc.cpp" />
     <ClCompile Include="CitiesTable.cpp" />
     <ClCompile Include="CitiesView.cpp" />
+    <ClCompile Include="CompaniesData.cpp" />
+    <ClCompile Include="CompaniesDoc.cpp" />
+    <ClCompile Include="CompaniesTable.cpp" />
+    <ClCompile Include="CompaniesView.cpp" />
     <ClCompile Include="InputValidator.cpp" />
     <ClCompile Include="LoginDialog.cpp" />
     <ClCompile Include="PhonebookListView.cpp" />
@@ -258,6 +277,11 @@
     <ClCompile Include="Phonebook.cpp" />
     <ClCompile Include="PhoneNumbersTable.cpp" />
     <ClCompile Include="PhoneTypesTable.cpp" />
+    <ClCompile Include="PositionsData.cpp" />
+    <ClCompile Include="PositionsDialog.cpp" />
+    <ClCompile Include="PositionsDoc.cpp" />
+    <ClCompile Include="PositionsTable.cpp" />
+    <ClCompile Include="PositionsView.cpp" />
     <ClCompile Include="SHA256.cpp" />
     <ClCompile Include="UserLogin.cpp" />
     <ClCompile Include="UsersData.cpp" />

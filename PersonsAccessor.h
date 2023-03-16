@@ -20,7 +20,10 @@ enum PersonsAccessorColumnEntries
 	PersonsAccessorColumnEntriesLastName,
 	PersonsAccessorColumnEntriesUCN,
 	PersonsAccessorColumnEntriesCityID,
-	PersonsAccessorColumnEntriesAddress
+	PersonsAccessorColumnEntriesAddress,
+	PersonsAccessorColumnEntriesCompanyID,
+	PersonsAccessorColumnEntriesPositionID
+
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -47,6 +50,8 @@ protected:
 			COLUMN_ENTRY(PersonsAccessorColumnEntriesUCN, m_recPerson.szUCN)
 			COLUMN_ENTRY(PersonsAccessorColumnEntriesCityID, m_recPerson.lCityID)
 			COLUMN_ENTRY(PersonsAccessorColumnEntriesAddress, m_recPerson.szAddress)
+			COLUMN_ENTRY(PersonsAccessorColumnEntriesCompanyID, m_recPerson.lCompanyID)
+			COLUMN_ENTRY(PersonsAccessorColumnEntriesPositionID, m_recPerson.lPositionID)
 		END_ACCESSOR()
 
 	END_ACCESSOR_MAP()

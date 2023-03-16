@@ -28,6 +28,18 @@ public:
 	/// <summary> Връща типа на телефона по ID </summary>
 	BOOL GetPhoneTypeByID(const long lID, PHONE_TYPES& recPhoneType) const;
 
+	/// <summary> Връща компания по ID </summary>
+	BOOL GetCompanyByID(const long lID, COMPANIES& recCompany) const;
+
+	/// <summary> Връща позиция по ID </summary>
+	BOOL GetPositionByID(const long lID, POSITIONS& recPositon) const;
+
+	/// <summary> Връща всички градове </summary>
+	CPtrAutoArray<COMPANIES>* GetCompanies();
+
+	/// <summary> Връща всички позиции </summary>
+	CPtrAutoArray<POSITIONS>* GetPositions();
+
 	/// <summary> Връща всички градове </summary>
 	CPtrAutoArray<CITIES>* GetCities();
 
@@ -42,4 +54,6 @@ public:
 private:
 	CPtrAutoArray<CITIES> m_oCities;
 	CPtrAutoArray<PHONE_TYPES> m_oPhoneTypes;
+	CPtrAutoArray<COMPANIES> m_oCompanies;
+	CPtrAutoArray<POSITIONS> m_oPositions;
 };

@@ -4,6 +4,8 @@
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_OLE_INIT_FAILED             100
+#define IDS_COMPANIES_STRING            101
+#define IDS_POSITIONS_STRING            102
 #define IDR_POPUP_EDIT                  119
 #define ID_STATUSBAR_PANE1              120
 #define ID_STATUSBAR_PANE2              121
@@ -25,6 +27,8 @@
 #define IDD_PERSONS_DIALOG              317
 #define IDD_PHONE_NUMBERS_EDIT_DIALOG   321
 #define IDD_LOGIN_DIALOG                323
+#define IDD_COMPANIES_DIALOG            325
+#define IDD_POSITIONS_DIALOG            327
 #define IDC_STT_CITIES_EDIT_NAME        1000
 #define IDC_STT_CITIES_EDIT_DISTRICT    1001
 #define IDC_EDB_CITIES_EDIT_NAME        1002
@@ -59,6 +63,9 @@
 #define IDC_STT_LOGIN_PASSWORD          1026
 #define IDC_EDB_LOGIN_NAME              1027
 #define IDC_EDB_LOGIN_PASSWORD          1028
+#define IDC_EDIT1                       1029
+#define IDC_COMBO1                      1031
+#define IDC_COMBO2                      1032
 #define ID_EDIT_EDIT                    32771
 #define ID_EDIT_ADD                     32772
 #define ID_EDIT_DELETE                  32773
@@ -71,9 +78,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        325
+#define _APS_NEXT_RESOURCE_VALUE        329
 #define _APS_NEXT_COMMAND_VALUE         32780
-#define _APS_NEXT_CONTROL_VALUE         1029
+#define _APS_NEXT_CONTROL_VALUE         1033
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

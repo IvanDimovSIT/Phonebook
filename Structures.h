@@ -16,6 +16,11 @@ const int PHONE_NUMBERS_NUMBER_LENGTH = 15;
 const int USERS_USERNAME_LENGTH = 128;
 const int USERS_PASSWORD_LENGTH = 128;
 
+const int COMPANIES_COMPANY_NAME_LENGTH = 64;
+
+const int POSITIONS_POSITION_NAME_LENGTH = 64;
+
+
 /// <summary>
 /// Дискова структура за таблицата USERS
 /// </summary>
@@ -64,6 +69,9 @@ struct PERSONS
 	TCHAR szUCN[PERSONS_UCN_LENGTH];
 	long lCityID;
 	TCHAR szAddress[PERSONS_ADDRESS_LENGTH];
+	long lCompanyID;
+	long lPositionID;
+
 
 	PERSONS()
 	{
@@ -114,6 +122,39 @@ struct PHONE_NUMBERS
 	}
 
 };
+
+/// <summary>
+/// Дискова структура за таблицата COMPANIES
+/// </summary>
+struct COMPANIES
+{
+	long lID;
+	long lUpdateCounter;
+	TCHAR szCompanyName[COMPANIES_COMPANY_NAME_LENGTH];
+
+	COMPANIES()
+	{
+		SecureZeroMemory(this, sizeof(*this));
+	}
+
+};
+
+/// <summary>
+/// Дискова структура за таблицата POSITIONS
+/// </summary>
+struct POSITIONS
+{
+	long lID;
+	long lUpdateCounter;
+	TCHAR szPositionName[POSITIONS_POSITION_NAME_LENGTH];
+
+	POSITIONS()
+	{
+		SecureZeroMemory(this, sizeof(*this));
+	}
+
+};
+
 
 typedef CTypedPtrArray<CPtrArray, CITIES*> CCitiesPtrArray;
 typedef CTypedPtrArray<CPtrArray, PERSONS*> CPersonsPtrArray;

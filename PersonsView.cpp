@@ -32,16 +32,21 @@ enum PersonsViewColumn
 	PersonsViewColumnUCN,
 	PersonsViewColumnCityName,
 	PersonsViewColumnDistrict,
-	PersonsViewColumnAddress
+	PersonsViewColumnAddress,
+	PersonsViewColumnCompany,
+	PersonsViewColumnPosition
 };
 
 #define PERSON_FIRST_NAME_COLUMN_WIDTH 150
 #define PERSON_MIDDLE_NAME_COLUMN_WIDTH 150
 #define PERSON_LAST_NAME_COLUMN_WIDTH 150
-#define PERSON_UCN_COLUMN_WIDTH 150
+#define PERSON_UCN_COLUMN_WIDTH 80
 #define PERSON_CITY_NAME_COLUMN_WIDTH 150
 #define PERSON_DISTRICT_COLUMN_WIDTH 150
-#define PERSON_ADDRESS_COLUMN_WIDTH 250
+#define PERSON_ADDRESS_COLUMN_WIDTH 220
+#define PERSON_COMPANY_COLUMN_WIDTH 150
+#define PERSON_POSITION_COLUMN_WIDTH 150
+
 
 #define PERSON_FIRST_NAME_COLUMN_NAME _T("Име")
 #define PERSON_MIDDLE_NAME_COLUMN_NAME _T("Презиме")
@@ -50,6 +55,9 @@ enum PersonsViewColumn
 #define PERSON_CITY_NAME_COLUMN_NAME  _T("Град")
 #define PERSON_DISTRICT_COLUMN_NAME _T("Област")
 #define PERSON_ADDRESS_COLUMN_NAME _T("Адрес")
+#define PERSON_COMPANY_COLUMN_NAME _T("Компания")
+#define PERSON_POSITION_COLUMN_NAME _T("Позиция")
+
 
 #define UPDATE_ERROR_MESSAGE _T("Грешка при редактиране на данните. Моля рестартирайте приложението.")
 #define INSERT_ERROR_MESSAGE _T("Грешка при въвеждане на данните. Моля рестартирайте приложението.")
@@ -136,6 +144,20 @@ void CPersonsView::SetListViewItem(CListCtrl& oListCtrl, const CPerson& oPerson,
 		return;
 	}
 
+	COMPANIES recCompany;
+	if (!oPersonDisplay.GetCompanyByID(oPerson.m_recPerson.lCompanyID, recCompany))
+	{
+		CErrorLogger::LogMessage(SETTING_ITEM_TEXT_ERROR_MESSAGE, TRUE, TRUE);
+		return;
+	}
+
+	POSITIONS recPosition;
+	if (!oPersonDisplay.GetPositionByID(oPerson.m_recPerson.lPositionID, recPosition))
+	{
+		CErrorLogger::LogMessage(SETTING_ITEM_TEXT_ERROR_MESSAGE, TRUE, TRUE);
+		return;
+	}
+
 	if (!oListCtrl.SetItemText(nItemIndex, PersonsViewColumnCityName, recCity.szCityName))
 		CErrorLogger::LogMessage(SETTING_ITEM_TEXT_ERROR_MESSAGE, TRUE, TRUE);
 
@@ -144,6 +166,13 @@ void CPersonsView::SetListViewItem(CListCtrl& oListCtrl, const CPerson& oPerson,
 
 	if (!oListCtrl.SetItemText(nItemIndex, PersonsViewColumnAddress, oPerson.m_recPerson.szAddress))
 		CErrorLogger::LogMessage(SETTING_ITEM_TEXT_ERROR_MESSAGE, TRUE, TRUE);
+
+	if (!oListCtrl.SetItemText(nItemIndex, PersonsViewColumnCompany, recCompany.szCompanyName))
+		CErrorLogger::LogMessage(SETTING_ITEM_TEXT_ERROR_MESSAGE, TRUE, TRUE);
+
+	if (!oListCtrl.SetItemText(nItemIndex, PersonsViewColumnPosition, recPosition.szPositionName))
+		CErrorLogger::LogMessage(SETTING_ITEM_TEXT_ERROR_MESSAGE, TRUE, TRUE);
+
 }
 
 
@@ -156,6 +185,9 @@ void CPersonsView::SetColumns(CListCtrl& oListCtrl)
 	oListCtrl.InsertColumn(PersonsViewColumnCityName, PERSON_CITY_NAME_COLUMN_NAME, LVCFMT_LEFT, PERSON_CITY_NAME_COLUMN_WIDTH);
 	oListCtrl.InsertColumn(PersonsViewColumnDistrict, PERSON_DISTRICT_COLUMN_NAME, LVCFMT_LEFT, PERSON_DISTRICT_COLUMN_WIDTH);
 	oListCtrl.InsertColumn(PersonsViewColumnAddress, PERSON_ADDRESS_COLUMN_NAME, LVCFMT_LEFT, PERSON_ADDRESS_COLUMN_WIDTH);
+	oListCtrl.InsertColumn(PersonsViewColumnCompany, PERSON_COMPANY_COLUMN_NAME, LVCFMT_LEFT, PERSON_COMPANY_COLUMN_WIDTH);
+	oListCtrl.InsertColumn(PersonsViewColumnPosition, PERSON_POSITION_COLUMN_NAME, LVCFMT_LEFT, PERSON_POSITION_COLUMN_WIDTH);
+
 }
 
 
