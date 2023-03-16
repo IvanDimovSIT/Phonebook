@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{7c3810f6-3d2d-4fa6-a105-628548bcc370}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs">
+      <UniqueIdentifier>{dce73382-eb1f-45fb-8b46-9f472b589e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{3a23bd5b-ad11-49f1-ae9f-1a2ca14c7ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Accessors">
+      <UniqueIdentifier>{f3c5bd88-7e4e-45b0-ad23-4fb69f8eaf39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables">
+      <UniqueIdentifier>{2cce5454-311a-49cc-ac32-b40516c4ce99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs">
+      <UniqueIdentifier>{a971aaf9-b979-4f44-8223-fa3a099778b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ErrorLogger">
+      <UniqueIdentifier>{63ff661d-1e6e-449a-965a-bd4ad3ee5b8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataSource">
+      <UniqueIdentifier>{c62a3ef9-e9a3-4438-a548-5e00aa531647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Persons Information">
+      <UniqueIdentifier>{ee53ea21-7c1f-44bb-8bfa-3c3856a6204c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input validation">
+      <UniqueIdentifier>{4b7e22e3-cf1a-456b-a084-c1e113a53e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="User login">
+      <UniqueIdentifier>{b578450e-5d17-4faf-8737-f85c2306232e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SHA256">
+      <UniqueIdentifier>{9ea59bd5-5c71-454b-a20d-d8934b5d4594}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Phonebook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PtrAutoArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DocumentDataOperation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesDoc.h">
+      <Filter>Docs</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="DBTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="CitiesDialogType.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorLogger.h">
+      <Filter>ErrorLogger</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSourceSingleton.h">
+      <Filter>DataSource</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneTypesAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneTypesTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneNumbersAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneNumbersTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Persons Information</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonDisplay.h">
+      <Filter>Persons Information</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsDoc.h">
+      <Filter>Docs</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonsDialogType.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneNumbersEditDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneNumbersEditDialogType.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="InputValidator.h">
+      <Filter>Input validation</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="UserLogin.h">
+      <Filter>User login</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersTable.h">
+      <Filter>Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersAccessor.h">
+      <Filter>Accessors</Filter>
+    </ClInclude>
+    <ClInclude Include="SHA256.h">
+      <Filter>SHA256</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="PhonebookDoc.h">
+      <Filter>Docs</Filter>
+    </ClInclude>
+    <ClInclude Include="PhonebookListView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Phonebook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CitiesData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="CitiesDoc.cpp">
+      <Filter>Docs</Filter>
+    </ClCompile>
+    <ClCompile Include="CitiesView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="CitiesTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="CitiesDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorLogger.cpp">
+      <Filter>ErrorLogger</Filter>
+    </ClCompile>
+    <ClCompile Include="DataSourceSingleton.cpp">
+      <Filter>DataSource</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="PhoneTypesTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="PhoneNumbersTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Person.cpp">
+      <Filter>Persons Information</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonDisplay.cpp">
+      <Filter>Persons Information</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsDoc.cpp">
+      <Filter>Docs</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="PhoneNumbersEditDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="InputValidator.cpp">
+      <Filter>Input validation</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="UserLogin.cpp">
+      <Filter>User login</Filter>
+    </ClCompile>
+    <ClCompile Include="UsersTable.cpp">
+      <Filter>Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="SHA256.cpp">
+      <Filter>SHA256</Filter>
+    </ClCompile>
+    <ClCompile Include="UsersData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="PhonebookListView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Phonebook.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\userimages.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PhonebookDoc.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Phonebook.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Phonebook.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
