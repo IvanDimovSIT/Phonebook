@@ -27,8 +27,8 @@
 #define new DEBUG_NEW
 #endif
 
-#define DATABASE_LOGIN_NAME _T("sa")
-#define DATABASE_LOGIN_PASSWORD _T("sa")
+//#define DATABASE_LOGIN_NAME _T("sa")
+//#define DATABASE_LOGIN_PASSWORD _T("sa")
 
 // CPhonebookApp
 

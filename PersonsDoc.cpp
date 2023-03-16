@@ -36,7 +36,7 @@ END_MESSAGE_MAP()
 // Constructor / Destructor
 // ----------------
 
-CPersonsDoc::CPersonsDoc() noexcept
+CPersonsDoc::CPersonsDoc() noexcept : CPhonebookDoc()
 {
 	// TODO: add one-time construction code here
 

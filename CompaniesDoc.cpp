@@ -28,7 +28,7 @@ END_MESSAGE_MAP()
 // Constructor / Destructor
 // ----------------
 
-CCompaniesDoc::CCompaniesDoc() noexcept
+CCompaniesDoc::CCompaniesDoc() noexcept : CPhonebookDoc()
 {
 
 }

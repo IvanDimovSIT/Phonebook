@@ -53,6 +53,7 @@ public:
 template<class T>
 CPhonebookDoc<T>::CPhonebookDoc() noexcept
 {
+	theApp.CloseAllDocuments(TRUE);
 }
 
 template<class T>

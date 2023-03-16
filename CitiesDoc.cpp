@@ -34,7 +34,7 @@ END_MESSAGE_MAP()
 // Constructor / Destructor
 // ----------------
 
-CCitiesDoc::CCitiesDoc() noexcept
+CCitiesDoc::CCitiesDoc() noexcept : CPhonebookDoc()
 {
 
 }
