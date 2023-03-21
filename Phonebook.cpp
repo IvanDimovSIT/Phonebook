@@ -191,8 +191,6 @@ BOOL CPhonebookApp::InitInstance()
 	pMainFrame->UpdateWindow();
 
 
-
-
 	return TRUE;
 }
 
