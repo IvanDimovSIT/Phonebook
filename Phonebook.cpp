@@ -185,7 +185,6 @@ BOOL CPhonebookApp::InitInstance()
 		return FALSE;
 
 
-
 	// The main window has been initialized, so show and update it
 	pMainFrame->ShowWindow(m_nCmdShow);
 	pMainFrame->UpdateWindow();
