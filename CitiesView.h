@@ -13,6 +13,11 @@
 /// </summary>
 class CCitiesView : public CPhonebookListView
 {
+private:
+	CPtrAutoArray<CITIES> m_oAutoArray;
+	CString m_strSearch;
+	BOOL m_bIsSearch = FALSE;
+
 protected: // create from serialization only
 	CCitiesView() noexcept;
 	DECLARE_DYNCREATE(CCitiesView)
@@ -25,6 +30,8 @@ public:
 public:
 
 private:
+
+	void ShowSearch(CListCtrl& oListCtrl);
 
 	/// <summary> Задава стойностите на елемент от ListCtrl </summary>
 	void SetListViewItem(CListCtrl& oListCtrl, const CITIES& recCity, int nIndex);
@@ -40,6 +47,7 @@ private:
 
 	/// <summary> Изтриване на запис </summary>
 	void OperationDelete(CListCtrl& oListCtrl, const CITIES& recCity);
+
 
 // Overrides
 public:
@@ -77,6 +85,7 @@ public:
 	afx_msg void OnContextAdd();
 	afx_msg void OnContextDelete() override;
 	afx_msg void OnContextView() override;
+	afx_msg void OnContextSearch();
 	afx_msg void OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult);
 };
 

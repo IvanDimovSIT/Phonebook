@@ -1,4 +1,4 @@
-
+﻿
 // CitiesDoc.cpp : implementation of the CCitiesDoc class
 //
 
@@ -45,6 +45,15 @@ CCitiesDoc::~CCitiesDoc()
 
 // Methods
 // ----------------
+
+/// <summary> Получава всички записи за CITIES с търсеното име и пълни масива </summary>
+BOOL CCitiesDoc::SelectByName(CPtrAutoArray<CITIES>& oAutoArray, const CString& strName)
+{
+	oAutoArray.RemoveAll();
+	return m_oCitiesData.SelectByName(oAutoArray, strName);
+}
+
+
 INT_PTR CCitiesDoc::GetRowIndexByID(const long lID) const
 {
 	for (INT_PTR i = 0; i < m_oArray.GetCount(); i++)

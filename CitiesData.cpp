@@ -20,6 +20,12 @@ CCitiesData::~CCitiesData()
 
 // Methods
 // ----------------
+BOOL CCitiesData::SelectByName(CPtrAutoArray<CITIES>& oAutoArray, const CString& strName)
+{
+	CCitiesTable oCitiesTable;
+	return oCitiesTable.SelectByName(oAutoArray, strName);
+}
+
 
 BOOL CCitiesData::SelectAll(CPtrAutoArray<CITIES>& oCitiesAutoArray)
 {

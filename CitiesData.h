@@ -23,6 +23,9 @@ public:
 	/// <summary> Получава всички записи за CITIES и пълни масива </summary>
 	BOOL SelectAll(CPtrAutoArray<CITIES>& oCitiesAutoArray);
 
+	/// <summary> Получава всички записи за CITIES с търсеното име и пълни масива </summary>
+	BOOL SelectByName(CPtrAutoArray<CITIES>& oAutoArray, const CString& strName);
+
 	/// <summary> Намира запис по зададено ID </summary>
 	BOOL SelectWhereID(const long lID, CITIES& recCity);
 

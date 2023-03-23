@@ -24,6 +24,8 @@ public:
 
 // Methods
 // ----------------
+	/// <summary> Получава всички записи по име </summary>
+	BOOL SelectByName(CPtrAutoArray<CITIES>& oAutoArray, const CString& strName);
 
 // Overrides
 // ----------------

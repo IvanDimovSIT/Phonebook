@@ -16,6 +16,7 @@
 #include "CitiesDialog.h"
 #include "CitiesDialogType.h"
 #include "DocumentDataOperation.h"
+#include "CitiesSearchDialog.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -64,6 +65,7 @@ BEGIN_MESSAGE_MAP(CCitiesView, CPhonebookListView)
 	ON_COMMAND(ID_POPUP_ADD, &CCitiesView::OnContextAdd)
 	ON_COMMAND(ID_POPUP_DELETE, &CCitiesView::OnContextDelete)
 	ON_COMMAND(ID_POPUP_VIEW, &CCitiesView::OnContextView)
+	ON_COMMAND(ID_POPUP_SEARCH, &CCitiesView::OnContextSearch)
 END_MESSAGE_MAP()
 
 
@@ -106,6 +108,25 @@ BOOL CCitiesView::IsSelectedRow()
 {
 	return GetSelectedCity() != NULL;
 }
+
+void CCitiesView::ShowSearch(CListCtrl& oListCtrl)
+{
+	if (!m_bIsSearch)
+		return;
+
+	SetRedraw(FALSE);
+	oListCtrl.DeleteAllItems();
+	SetRedraw(TRUE);
+
+	GetDocument()->SelectByName(m_oAutoArray, m_strSearch);
+	for (INT_PTR i = 0; i < m_oAutoArray.GetCount(); i++)
+	{
+		CITIES* pCity = m_oAutoArray.GetAt(i);
+
+		OperationInsert(oListCtrl, *pCity);
+	}
+}
+
 
 void CCitiesView::SetListViewItem(CListCtrl& oListCtrl, const CITIES& recCity, int nItemIndex)
 {
@@ -179,6 +200,9 @@ void CCitiesView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 		CErrorLogger::LogMessage(OPERATION_NOT_RECOGNISED_ERROR_MESSAGE, TRUE, TRUE);
 		break;
 	}
+
+	if (m_bIsSearch)
+		ShowSearch(oListCtrl);
 	oListCtrl.RedrawItems(0, ALL_ITEMS_NUMBER);
 }
 
@@ -277,4 +301,23 @@ void CCitiesView::OnContextView()
 void CCitiesView::OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	SetRowColors(pNMHDR, pResult);
+}
+
+void CCitiesView::OnContextSearch()
+{
+	CListCtrl& oListCtrl = GetListCtrl();
+	CCitiesSearchDialog oDialog;
+	if (oDialog.DoModal() != IDOK)
+	{
+		SetRedraw(FALSE);
+		oListCtrl.DeleteAllItems();
+		SetRedraw(TRUE);
+
+		m_bIsSearch = FALSE;
+		SetInitialData(oListCtrl);
+		return;
+	}
+	m_bIsSearch = TRUE;
+	m_strSearch = oDialog.m_strName;
+	ShowSearch(oListCtrl);
 }

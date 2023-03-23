@@ -43,6 +43,10 @@ public:
 	/// <summary> Изтриване на запис </summary>
 	BOOL RemoveCity(const long lID);
 
+	/// <summary> Получава всички записи за CITIES с търсеното име и пълни масива </summary>
+	BOOL SelectByName(CPtrAutoArray<CITIES>& oAutoArray, const CString& strName);
+
+
 // Overrides
 public:
 	virtual BOOL OnNewDocument() override;

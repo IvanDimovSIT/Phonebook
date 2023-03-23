@@ -189,6 +189,7 @@
     <ClInclude Include="CitiesDialog.h" />
     <ClInclude Include="CitiesDialogType.h" />
     <ClInclude Include="CitiesDoc.h" />
+    <ClInclude Include="CitiesSearchDialog.h" />
     <ClInclude Include="CitiesTable.h" />
     <ClInclude Include="CitiesView.h" />
     <ClInclude Include="CompaniesAccessor.h" />
@@ -243,6 +244,7 @@
     <ClInclude Include="UsersTable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CitiesSearchDialog.cpp" />
     <ClCompile Include="CompaniesDialog.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="CitiesData.cpp" />
