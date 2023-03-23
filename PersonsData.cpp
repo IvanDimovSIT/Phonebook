@@ -154,6 +154,29 @@ BOOL CPersonsData::SelectAll(CPtrAutoArray<CPerson>& oPersonAutoArray) const
 	return bResult;
 }
 
+BOOL CPersonsData::SelectByNameUCNAddress(CPtrAutoArray<CPerson>& oAutoArray, const CString& strName, const CString& strUCN, const CString& strAddress)
+{
+	CSession oSession;
+	CPersonsTable oPersonsTable(oSession);
+	CPhoneNumbersTable oPhoneNumbersTable(oSession);
+	oSession.Open(*CDataSourceSingleton::GetInstance()->GetDataSource());
+
+
+	CPtrAutoArray<PERSONS> oPersonsPartialArray;
+	if (!oPersonsTable.SelectByNameUCNAddress(oPersonsPartialArray, strName, strUCN, strAddress))
+	{
+		oSession.Close();
+		return FALSE;
+	}
+
+
+	BOOL bResult = SelectPhoneNumbersForPerson(oAutoArray, oPersonsPartialArray, oPhoneNumbersTable);
+	oSession.Close();
+	return bResult;
+}
+
+
+
 BOOL CPersonsData::SelectWhereID(const long lID, CPerson& oPerson) const
 {
 	CSession oSession;

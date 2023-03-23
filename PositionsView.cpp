@@ -268,3 +268,9 @@ void CPositionsView::OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	SetRowColors(pNMHDR, pResult);
 }
+
+
+BOOL CPositionsView::CanSearch()
+{
+	return FALSE;
+}

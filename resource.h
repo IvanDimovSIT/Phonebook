@@ -30,6 +30,7 @@
 #define IDD_COMPANIES_DIALOG            325
 #define IDD_POSITIONS_DIALOG            327
 #define IDD_CITIES_SEARCH_DIALOG        329
+#define IDD_PERSONS_SEARCH              331
 #define IDC_STT_CITIES_EDIT_NAME        1000
 #define IDC_STT_CITIES_EDIT_DISTRICT    1001
 #define IDC_EDB_CITIES_EDIT_NAME        1002
@@ -67,6 +68,8 @@
 #define IDC_EDIT1                       1029
 #define IDC_COMBO1                      1031
 #define IDC_COMBO2                      1032
+#define IDC_EDIT2                       1033
+#define IDC_EDIT3                       1034
 #define ID_EDIT_EDIT                    32771
 #define ID_EDIT_ADD                     32772
 #define ID_EDIT_DELETE                  32773
@@ -80,9 +83,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        331
+#define _APS_NEXT_RESOURCE_VALUE        333
 #define _APS_NEXT_COMMAND_VALUE         32781
-#define _APS_NEXT_CONTROL_VALUE         1033
+#define _APS_NEXT_CONTROL_VALUE         1035
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

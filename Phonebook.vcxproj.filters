@@ -228,6 +228,9 @@
     <ClInclude Include="CitiesSearchDialog.h">
       <Filter>Dialogs</Filter>
     </ClInclude>
+    <ClInclude Include="PersonsSearchDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainFrm.cpp">
@@ -345,6 +348,9 @@
       <Filter>Views</Filter>
     </ClCompile>
     <ClCompile Include="CitiesSearchDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsSearchDialog.cpp">
       <Filter>Dialogs</Filter>
     </ClCompile>
   </ItemGroup>

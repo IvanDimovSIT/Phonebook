@@ -50,6 +50,9 @@ public:
 	/// <summary> Получава всички записи за PERSONS и пълни масива </summary>
 	BOOL SelectAll(CPtrAutoArray<CPerson>& oPersonAutoArray) const;
 
+	/// <summary> Получава всички записи по име </summary>
+	BOOL SelectByNameUCNAddress(CPtrAutoArray<CPerson>& oAutoArray, const CString& strName, const CString& strUCN, const CString& strAddress);
+
 	/// <summary> Намира запис по зададено ID </summary>
 	BOOL SelectWhereID(const long lID, CPerson& oPerson) const;
 

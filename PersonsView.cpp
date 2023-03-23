@@ -12,6 +12,7 @@
 #include "PersonsView.h"
 #include "PersonsDialog.h"
 #include "DocumentDataOperation.h"
+#include "PersonsSearchDialog.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -81,6 +82,7 @@ BEGIN_MESSAGE_MAP(CPersonsView, CPhonebookListView)
 	ON_COMMAND(ID_POPUP_ADD, &CPersonsView::OnContextAdd)
 	ON_COMMAND(ID_POPUP_DELETE, &CPersonsView::OnContextDelete)
 	ON_COMMAND(ID_POPUP_VIEW, &CPersonsView::OnContextView)
+	ON_COMMAND(ID_POPUP_SEARCH, &CPersonsView::OnContextSearch)
 END_MESSAGE_MAP()
 
 
@@ -209,6 +211,25 @@ void CPersonsView::SetInitialData(CListCtrl& oListCtrl)
 
 }
 
+void CPersonsView::ShowSearch(CListCtrl& oListCtrl)
+{
+	if (!m_bIsSearch)
+		return;
+
+	SetRedraw(FALSE);
+	oListCtrl.DeleteAllItems();
+	SetRedraw(TRUE);
+
+	GetDocument()->SelectByNameUCNAddress(m_oAutoArray, m_strSearchName, m_strSearchUCN, m_strSearchAddress);
+	for (INT_PTR i = 0; i < m_oAutoArray.GetCount(); i++)
+	{
+		CPerson* pPerson = m_oAutoArray.GetAt(i);
+
+		OperationInsert(oListCtrl, *pPerson);
+	}
+}
+
+
 void CPersonsView::OperationUpdate(CListCtrl& oListCtrl, const CPerson& oPerson)
 {
 	const int nIndex = GetIndexByID(oListCtrl ,oPerson.m_recPerson.lID);
@@ -267,6 +288,8 @@ void CPersonsView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 		CErrorLogger::LogMessage(OPERATION_NOT_RECOGNISED_ERROR_MESSAGE, TRUE, TRUE);
 		break;
 	}
+	if (m_bIsSearch)
+		ShowSearch(oListCtrl);
 	oListCtrl.RedrawItems(0, ALL_ITEMS_NUMBER);
 }
 
@@ -362,8 +385,35 @@ void CPersonsView::OnContextView()
 	oPersonsDialog.DoModal();
 }
 
+void CPersonsView::OnContextSearch()
+{
+	CListCtrl& oListCtrl = GetListCtrl();
+	CPersonsSearchDialog oDialog;
+	if (oDialog.DoModal() != IDOK)
+	{
+		SetRedraw(FALSE);
+		oListCtrl.DeleteAllItems();
+		SetRedraw(TRUE);
+
+		m_bIsSearch = FALSE;
+		SetInitialData(oListCtrl);
+		return;
+	}
+	m_bIsSearch = TRUE;
+	m_strSearchName = oDialog.m_strName;
+	m_strSearchUCN = oDialog.m_strUCN;
+	m_strSearchAddress = oDialog.m_strAddress;
+	ShowSearch(oListCtrl);
+}
+
 
 void CPersonsView::OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	SetRowColors(pNMHDR, pResult);
+}
+
+
+BOOL CPersonsView::CanSearch()
+{
+	return TRUE;
 }

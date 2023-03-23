@@ -49,6 +49,9 @@ public:
 	/// <summary> Получаване на допълнителни данни за представяне </summary>
 	CPersonDisplay* GetDisplayInformation();
 
+	/// <summary> Получава всички записи по име </summary>
+	BOOL SelectByNameUCNAddress(CPtrAutoArray<CPerson>& oAutoArray, const CString& strName, const CString& strUCN, const CString& strAddress);
+
 	/// <summary> Промяна на запис по ID </summary>
 	BOOL SetPersonByID(const long lID, CPerson& oPerson);
 

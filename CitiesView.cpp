@@ -321,3 +321,8 @@ void CCitiesView::OnContextSearch()
 	m_strSearch = oDialog.m_strName;
 	ShowSearch(oListCtrl);
 }
+
+BOOL CCitiesView::CanSearch() 
+{
+	return TRUE;
+}

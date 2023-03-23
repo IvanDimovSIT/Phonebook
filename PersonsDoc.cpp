@@ -1,4 +1,4 @@
-
+﻿
 // CitiesDoc.cpp : implementation of the CCitiesDoc class
 //
 
@@ -146,6 +146,14 @@ BOOL CPersonsDoc::RemovePerson(const long lID)
 
 	return TRUE;
 }
+
+/// <summary> Получава всички записи по име </summary>
+BOOL CPersonsDoc::SelectByNameUCNAddress(CPtrAutoArray<CPerson>& oAutoArray, const CString& strName, const CString& strUCN, const CString& strAddress)
+{
+	oAutoArray.RemoveAll();
+	return m_oPersonsData.SelectByNameUCNAddress(oAutoArray, strName, strUCN, strAddress);
+}
+
 
 BOOL CPersonsDoc::OnNewDocument()
 {

@@ -10,6 +10,13 @@
 /// </summary>
 class CPersonsView : public CPhonebookListView
 {
+private:
+	CPtrAutoArray<CPerson> m_oAutoArray;
+	CString m_strSearchName;
+	CString m_strSearchUCN;
+	CString m_strSearchAddress;
+	BOOL m_bIsSearch = FALSE;
+
 protected: // create from serialization only
 	CPersonsView() noexcept;
 	DECLARE_DYNCREATE(CPersonsView)
@@ -22,6 +29,8 @@ public:
 public:
 
 private:
+	void ShowSearch(CListCtrl& oListCtrl);
+
 	/// <summary> Задава стойностите на елемент от ListCtrl </summary>
 	void SetListViewItem(CListCtrl& oListCtrl, const CPerson& oPerson, const CPersonDisplay& oPersonDisplay, int nIndex);
 
@@ -51,6 +60,8 @@ protected:
 
 	virtual void OnInitialUpdate(); // called first time after construct
 
+	virtual BOOL CanSearch() override;
+
 // Implementation
 public:
 	virtual ~CPersonsView();
@@ -71,6 +82,7 @@ public:
 	afx_msg void OnContextAdd();
 	afx_msg void OnContextDelete() override;
 	afx_msg void OnContextView() override;
+	afx_msg void OnContextSearch();
 	afx_msg void OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult);
 };
 

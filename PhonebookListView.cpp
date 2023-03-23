@@ -118,6 +118,11 @@ void CPhonebookListView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 		oPopupMenu->EnableMenuItem(ID_POPUP_VIEW, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
 	}
 
+	if (!CanSearch()) 
+	{
+		oPopupMenu->EnableMenuItem(ID_POPUP_SEARCH, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
+	}
+
 	oPopupMenu->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON, point.x, point.y, this);
 
 #endif

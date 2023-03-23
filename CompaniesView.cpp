@@ -268,3 +268,10 @@ void CCompaniesView::OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	SetRowColors(pNMHDR, pResult);
 }
+
+
+
+BOOL CCompaniesView::CanSearch()
+{
+	return FALSE;
+}

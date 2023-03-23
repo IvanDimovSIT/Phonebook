@@ -38,6 +38,8 @@ protected:
 	/// <summary> Задава началнните стойности </summary>
 	virtual void SetInitialData(CListCtrl& oListCtrl) = 0;
 
+	virtual BOOL CanSearch() = 0;
+
 	/// <summary> Инитиализира контролата </summary>
 	void Initialize(CListCtrl& oListCtrl);
 

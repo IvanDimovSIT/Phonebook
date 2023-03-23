@@ -52,6 +52,8 @@ protected:
 
 	virtual void OnInitialUpdate(); // called first time after construct
 
+	virtual BOOL CanSearch() override;
+
 // Implementation
 public:
 	virtual ~CPositionsView();

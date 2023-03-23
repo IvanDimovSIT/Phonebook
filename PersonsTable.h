@@ -24,6 +24,10 @@ public:
 
 	// Methods
 	// ----------------
+	
+	/// <summary> Получава всички записи по име </summary>
+	BOOL SelectByNameUCNAddress(CPtrAutoArray<PERSONS>& oAutoArray, const CString& strName, const CString& strUCN, const CString& strAddress);
+
 
 	/// <summary> Получава всички записи по азбучен ред и пълни масива </summary>
 	BOOL SelectAllSorted(CPtrAutoArray<PERSONS>& oAutoArray);
