@@ -275,3 +275,8 @@ BOOL CCompaniesView::CanSearch()
 {
 	return FALSE;
 }
+
+BOOL CCompaniesView::CanConvert()
+{
+	return FALSE;
+}

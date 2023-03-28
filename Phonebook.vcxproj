@@ -214,6 +214,7 @@
     <ClInclude Include="PersonsDialog.h" />
     <ClInclude Include="PersonsDialogType.h" />
     <ClInclude Include="PersonsDoc.h" />
+    <ClInclude Include="PersonsFileConverter.h" />
     <ClInclude Include="PersonsSearchDialog.h" />
     <ClInclude Include="PersonsTable.h" />
     <ClInclude Include="PersonsView.h" />
@@ -257,6 +258,7 @@
     <ClCompile Include="CompaniesDoc.cpp" />
     <ClCompile Include="CompaniesTable.cpp" />
     <ClCompile Include="CompaniesView.cpp" />
+    <ClCompile Include="PersonsFileConverter.cpp" />
     <ClCompile Include="PersonsSearchDialog.cpp" />
     <ClCompile Include="InputValidator.cpp" />
     <ClCompile Include="LoginDialog.cpp" />

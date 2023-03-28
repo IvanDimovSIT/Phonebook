@@ -274,3 +274,8 @@ BOOL CPositionsView::CanSearch()
 {
 	return FALSE;
 }
+
+BOOL CPositionsView::CanConvert()
+{
+	return FALSE;
+}

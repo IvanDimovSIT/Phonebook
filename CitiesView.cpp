@@ -326,3 +326,8 @@ BOOL CCitiesView::CanSearch()
 {
 	return TRUE;
 }
+
+BOOL CCitiesView::CanConvert()
+{
+	return FALSE;
+}

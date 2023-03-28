@@ -49,6 +49,9 @@
     <Filter Include="SHA256">
       <UniqueIdentifier>{9ea59bd5-5c71-454b-a20d-d8934b5d4594}</UniqueIdentifier>
     </Filter>
+    <Filter Include="File converter">
+      <UniqueIdentifier>{dc5bdf2c-6669-4d07-b4a0-493630622209}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Phonebook.h">
@@ -231,6 +234,9 @@
     <ClInclude Include="PersonsSearchDialog.h">
       <Filter>Dialogs</Filter>
     </ClInclude>
+    <ClInclude Include="PersonsFileConverter.h">
+      <Filter>File converter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainFrm.cpp">
@@ -352,6 +358,9 @@
     </ClCompile>
     <ClCompile Include="PersonsSearchDialog.cpp">
       <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonsFileConverter.cpp">
+      <Filter>File converter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

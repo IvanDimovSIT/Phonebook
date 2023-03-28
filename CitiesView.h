@@ -66,6 +66,8 @@ protected:
 
 	virtual BOOL CanSearch() override;
 
+	virtual BOOL CanConvert() override;
+
 // Implementation
 public:
 	virtual ~CCitiesView();

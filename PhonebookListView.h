@@ -40,6 +40,8 @@ protected:
 
 	virtual BOOL CanSearch() = 0;
 
+	virtual BOOL CanConvert() = 0;
+
 	/// <summary> Инитиализира контролата </summary>
 	void Initialize(CListCtrl& oListCtrl);
 

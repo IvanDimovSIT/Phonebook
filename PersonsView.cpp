@@ -13,7 +13,7 @@
 #include "PersonsDialog.h"
 #include "DocumentDataOperation.h"
 #include "PersonsSearchDialog.h"
-
+#include "PersonsFileConverter.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CPersonsView
@@ -83,6 +83,7 @@ BEGIN_MESSAGE_MAP(CPersonsView, CPhonebookListView)
 	ON_COMMAND(ID_POPUP_DELETE, &CPersonsView::OnContextDelete)
 	ON_COMMAND(ID_POPUP_VIEW, &CPersonsView::OnContextView)
 	ON_COMMAND(ID_POPUP_SEARCH, &CPersonsView::OnContextSearch)
+	ON_COMMAND(ID_POPUP_CONVERT, &CPersonsView::OnContextConvert)
 END_MESSAGE_MAP()
 
 
@@ -416,4 +417,30 @@ void CPersonsView::OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult)
 BOOL CPersonsView::CanSearch()
 {
 	return TRUE;
+}
+
+BOOL CPersonsView::CanConvert()
+{
+	return TRUE;
+}
+
+void CPersonsView::OnContextConvert()
+{
+	CFileDialog oFileDialog(FALSE, NULL, NULL, OFN_OVERWRITEPROMPT, _T("HTML Files (*.html)|*.html|All Files (*.*)|*.*||"));; // TRUE for open dialog, FALSE for save dialog
+	if (oFileDialog.DoModal() != IDOK) // display the dialog box and check for cancel
+		return;
+
+
+	CString strFilePath = oFileDialog.GetPathName();
+	CPersonsFileConverter oPersonsFileConverter;
+
+
+	if (m_bIsSearch) {
+		if (!oPersonsFileConverter.Convert(strFilePath, m_oAutoArray, *GetDocument()->GetDisplayInformation()))
+			CErrorLogger::LogMessage(_T("Error when converting file."), TRUE, TRUE);
+	}
+	else {
+		if (!oPersonsFileConverter.Convert(strFilePath, *(CPtrAutoArray<CPerson>*)GetDocument()->GetData(), *GetDocument()->GetDisplayInformation()))
+			CErrorLogger::LogMessage(_T("Error when converting file."), TRUE, TRUE);
+	}
 }

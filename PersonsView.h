@@ -62,6 +62,8 @@ protected:
 
 	virtual BOOL CanSearch() override;
 
+	virtual BOOL CanConvert() override;
+
 // Implementation
 public:
 	virtual ~CPersonsView();
@@ -83,6 +85,7 @@ public:
 	afx_msg void OnContextDelete() override;
 	afx_msg void OnContextView() override;
 	afx_msg void OnContextSearch();
+	afx_msg void OnContextConvert();
 	afx_msg void OnNMCustomdraw(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
